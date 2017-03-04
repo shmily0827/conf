@@ -20,10 +20,10 @@ API_INTERFACE = 'glzjinmod' #mudbjson, sspanelv2, sspanelv3, sspanelv3ssr, muapi
 MUDB_FILE = 'mudb.json'
 
 # Mysql
-MYSQL_HOST = '139.59.238.124'
+MYSQL_HOST = ''
 MYSQL_PORT = 3306
 MYSQL_USER = 'sspanel'
-MYSQL_PASS = 'sspanel123456'
+MYSQL_PASS = ''
 MYSQL_DB = 'sspanel'
 MYSQL_UPDATE_TIME = 60
 
