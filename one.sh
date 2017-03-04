@@ -48,7 +48,10 @@ chmod +X /etc/init.d/supervisord
 service supervisord start
 
 echo 优化连接参数
+echo "  * soft nofile 51200
 
+        * hard nofile 51200" >>/etc/security/limits.conf
+ulimit -n 51200
 echo "fs.file-max = 51200 
 
 net.core.rmem_max = 67108864
