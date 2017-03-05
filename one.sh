@@ -1,5 +1,6 @@
 #!/bin/sh  
 echo 安装依赖
+cd
 yum -y install python-setuptools && easy_install pip
 
 yum -y install git
