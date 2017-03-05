@@ -45,7 +45,7 @@ chkconfig supervisord on
 wget https://raw.githubusercontent.com/shmily0827/conf-/master/supervisord.conf -O /etc/supervisord.conf
 
 wget https://raw.githubusercontent.com/shmily0827/conf-/master/supervisord -O /etc/init.d/supervisord
-chmod +X /etc/init.d/supervisord
+chmod +x /etc/init.d/supervisord
 service supervisord start
 
 echo 优化连接参数
