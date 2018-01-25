@@ -6,6 +6,14 @@ yum -y install python-setuptools && easy_install pip
 yum -y install git
 yum -y groupinstall "Development Tools"
 
+echo 开启防火墙
+firewall-cmd --add-port=543/tcp --permanent
+firewall-cmd --add-port=543/udp  --permanent
+firewall-cmd --add-port=12306/tcp --permanent
+firewall-cmd --add-port=12306/udp  --permanent
+firewall-cmd --add-port=22/tcp --permanent
+firewall-cmd --add-port=22/udp  --permanent
+systemctl restart firewalld
 
 echo 下载ssr源码
 cd 
