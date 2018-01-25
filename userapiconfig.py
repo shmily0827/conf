@@ -1,12 +1,12 @@
-﻿# Config
-NODE_ID = 20
+# Config
+NODE_ID = 9
 
 
 # hour,set 0 to disable
-SPEEDTEST = 6
-CLOUDSAFE = 1
-ANTISSATTACK = 0
-AUTOEXEC = 0
+SPEEDTEST = 19930827  #测速周期，单位H,与前端一致即可，或者关闭
+CLOUDSAFE = 1  
+ANTISSATTACK = 0  #改为1则启用防攻击模式
+AUTOEXEC = 0      #这个选项如果没有部署自动下发请保持为0，否则改为1
 
 MU_SUFFIX = 'zhaoj.in'
 MU_REGEX = '%5m%id.%suffix'
@@ -14,13 +14,13 @@ MU_REGEX = '%5m%id.%suffix'
 SERVER_PUB_ADDR = '127.0.0.1'  # mujson_mgr need this to generate ssr link
 API_INTERFACE = 'modwebapi'  # glzjinmod, modwebapi
 
-WEBAPI_URL = ''
-WEBAPI_TOKEN = '4hrZTJX2Dr64rhHqBAtDGDNdGZjNV7p8'
+WEBAPI_URL = 'https://api.kantianxia.win'  #网站域名，如果开启了cdn，nginx请学习real ip有关知识，保证能正确获取后端IP
+WEBAPI_TOKEN = '4hrZTJX2Dr64rhHqBAtDGDNdGZjNV7p8' #随意，与config文件一致
 
 # mudb
 MUDB_FILE = 'mudb.json'
 
-# Mysql
+# Mysql 使用modwebapi则无需配置
 MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'ss'
