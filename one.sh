@@ -1,12 +1,12 @@
 #!/bin/sh  
-echo 安装依赖
+echo "安装依赖"
 cd
 yum -y wget
 yum -y install python-setuptools && easy_install pip
 yum -y install git
 yum -y groupinstall "Development Tools"
 
-echo 开启防火墙
+echo "开启防火墙"
 firewall-cmd --add-port=543/tcp --permanent
 firewall-cmd --add-port=543/udp  --permanent
 firewall-cmd --add-port=12306/tcp --permanent
@@ -15,7 +15,7 @@ firewall-cmd --add-port=22/tcp --permanent
 firewall-cmd --add-port=22/udp  --permanent
 systemctl restart firewalld
 
-echo 下载ssr源码
+echo "下载ssr源码"
 cd 
 git clone -b manyuser https://github.com/glzjin/shadowsocks.git
 cd shadowsocks
@@ -37,7 +37,7 @@ echo "请输入你的节点ID:"
 read nodeid
 sed -i '/NODE_ID/d' userapiconfig.py
 
-echo 优化连接参数
+echo "优化连接参数"
 echo "  * soft nofile 51200
 
         * hard nofile 51200" >>/etc/security/limits.conf
@@ -96,6 +96,7 @@ sed -i '$a startsecs=3' /etc/supervisord.conf
 /usr/bin/supervisord -c /etc/supervisord.conf
 supervisorctl reload 
 sed -i '$a\supervisord' /etc/rc.d/rc.local
+sed -i  '$a\ulimit -n 51200' /etc/rc.d/rc.local
 fi
 
 echo '如果你是Centos7，请按<Y>继续设置开机启动,否则按其他键退出:'
