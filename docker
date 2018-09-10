@@ -1,0 +1,16 @@
+#!/bin/sh  
+yum -y update
+yum -y install docker wget
+systemctl start docker 
+systemctl enable docker 
+systemctl stop iptables 
+systemctl disable iptables 
+yum install  firewalld -y
+firewall-cmd --add-port=543/tcp --permanent
+firewall-cmd --add-port=543/udp  --permanent
+firewall-cmd --add-port=12306/tcp --permanent
+firewall-cmd --add-port=12306/udp  --permanent
+firewall-cmd --add-port=22/tcp --permanent
+firewall-cmd --add-port=22/udp  --permanent
+systemctl restart firewalld
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
