@@ -3,7 +3,7 @@ NODE_ID = 9
 
 
 # hour,set 0 to disable
-SPEEDTEST = 19930827  #测速周期，单位H,与前端一致即可，或者关闭
+SPEEDTEST = 99999999  #测速周期，单位H,与前端一致即可，或者关闭
 CLOUDSAFE = 1  
 ANTISSATTACK = 0  #改为1则启用防攻击模式
 AUTOEXEC = 0      #这个选项如果没有部署自动下发请保持为0，否则改为1
