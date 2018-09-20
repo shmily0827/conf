@@ -14,7 +14,7 @@ MU_REGEX = '%5m%id.%suffix'
 SERVER_PUB_ADDR = '127.0.0.1'  # mujson_mgr need this to generate ssr link
 API_INTERFACE = 'modwebapi'  # glzjinmod, modwebapi
 
-WEBAPI_URL = 'https://api.kantianxia.win'  #网站域名，如果开启了cdn，nginx请学习real ip有关知识，保证能正确获取后端IP
+WEBAPI_URL = 'https://admin.kantianxia.win'  #网站域名，如果开启了cdn，nginx请学习real ip有关知识，保证能正确获取后端IP
 WEBAPI_TOKEN = '4hrZTJX2Dr64rhHqBAtDGDNdGZjNV7p8' #随意，与config文件一致
 
 # mudb
