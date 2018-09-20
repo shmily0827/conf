@@ -42,6 +42,12 @@ echo "请输入你的节点ID:"
 read nodeid
 sed -i '/NODE_ID/d' userapiconfig.py
 
+
+echo "输入网站地址:"
+read url
+sed -i '/NODE_ID/d' userapiconfig.py
+
+
 echo "优化连接参数"
 echo "  * soft nofile 51200
 
