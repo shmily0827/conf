@@ -2,11 +2,12 @@
 echo "安装依赖"
 cd
 yum -y wget
-yum -y install python-setuptools && easy_install pip
+yum -y install python-setuptools && easy_install pip==9.0.3
 yum -y install git
 yum -y groupinstall "Development Tools"
 
 echo "开启防火墙"
+systemctl restart firewalld
 firewall-cmd --add-port=543/tcp --permanent
 firewall-cmd --add-port=543/udp  --permanent
 firewall-cmd --add-port=12306/tcp --permanent
@@ -25,9 +26,13 @@ yum -y install libffi-devel
 
 yum -y install openssl-devel
 
-pip install cymysql
+pip install urllib3==1.20
+pip install cymysql==0.9.6
+pip install requests==2.13.0
+pip install pyOpenSSL==16.2.0
+pip install ndg-httpsclient==0.4.2
+pip install pyasn1==0.2.2
 
-pip install -r requirements.txt
 
 wget https://raw.githubusercontent.com/shmily0827/conf-/master/user-config.json
 
